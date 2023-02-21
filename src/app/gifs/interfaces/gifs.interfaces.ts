@@ -1,10 +1,10 @@
-export type GifsResponse = {
-  data: Datum[];
+export interface GifsResponse {
+  data: Gif[];
   pagination: Pagination;
   meta: Meta;
-};
+}
 
-export type Datum = {
+export interface Gif {
   type: string;
   id: string;
   url: string;
@@ -26,19 +26,19 @@ export type Datum = {
   user?: User;
   analytics_response_payload: string;
   analytics: Analytics;
-};
+}
 
-export type Analytics = {
+export interface Analytics {
   onload: Onclick;
   onclick: Onclick;
   onsent: Onclick;
-};
+}
 
-export type Onclick = {
+export interface Onclick {
   url: string;
-};
+}
 
-export type Images = {
+export interface Images {
   original: FixedHeight;
   downsized: The480_WStill;
   downsized_large: The480_WStill;
@@ -63,23 +63,23 @@ export type Images = {
   preview_webp: The480_WStill;
   '480w_still': The480_WStill;
   hd?: DownsizedSmall;
-};
+}
 
-export type The480_WStill = {
+export interface The480_WStill {
   height: string;
   width: string;
   size: string;
   url: string;
-};
+}
 
-export type DownsizedSmall = {
+export interface DownsizedSmall {
   height: string;
   width: string;
   mp4_size: string;
   mp4: string;
-};
+}
 
-export type FixedHeight = {
+export interface FixedHeight {
   height: string;
   width: string;
   size: string;
@@ -90,14 +90,14 @@ export type FixedHeight = {
   webp: string;
   frames?: string;
   hash?: string;
-};
+}
 
-export type Looping = {
+export interface Looping {
   mp4_size: string;
   mp4: string;
-};
+}
 
-export type User = {
+export interface User {
   avatar_url: string;
   banner_image: string;
   banner_url: string;
@@ -108,16 +108,16 @@ export type User = {
   instagram_url: string;
   website_url: string;
   is_verified: boolean;
-};
+}
 
-export type Meta = {
+export interface Meta {
   status: number;
   msg: string;
   response_id: string;
-};
+}
 
-export type Pagination = {
+export interface Pagination {
   total_count: number;
   count: number;
   offset: number;
-};
+}
